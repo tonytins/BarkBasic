@@ -1,0 +1,4 @@
+10 PRINT 'Hello, World!'
+20 REM This is a comment
+30 GOTO 10
+40 EXIT

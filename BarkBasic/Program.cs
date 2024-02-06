@@ -1,10 +1,20 @@
-﻿const string code = """
+﻿using BarkBasic;
+using Tomlyn;
 
-                    10 PRINT 'Hello, World!'
-                    20 REM This is a comment
-                    30 GOTO 10
+var projModel = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "Project.toml"));
+var projFile = Toml.ToModel<ProjectFile>(projModel);
+var code = "";
 
-                    """;
+try
+{
+    var path = Path.Combine(Environment.CurrentDirectory, projFile.Code);
+    if (File.Exists(path))
+        code = File.ReadAllText(path);
+}
+catch (Exception err)
+{
+    throw new FileNotFoundException(err.StackTrace);
+}
 
 var lines = code.Split(Environment.NewLine);
 var lineNumberRegex = new Regex(@"^\d+");
@@ -28,12 +38,17 @@ foreach (var line in lines)
         Console.WriteLine(printMatch.Groups[1].Value);
         continue;
     }
-
+    
+    // TODO: Finish goto function.
     var gotoMatch = gotoRegex.Match(line);
     if (gotoMatch.Success)
     {
-        // Handle GOTO statement
-        continue;
+        /*using var reader = new StreamReader(projFile.Code);
+
+         for (var i = 1; i < int.Parse(gotoMatch.Groups[1].Value); i++)
+             reader.ReadLine();
+         
+         Console.WriteLine(reader.ReadLine());*/
     }
 
     throw new Exception($"Unknown statement in line: {line}");

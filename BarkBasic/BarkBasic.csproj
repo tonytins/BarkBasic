@@ -2,9 +2,24 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
+        <Version>0.1.120</Version>
+        <VersionSuffix>alpha</VersionSuffix>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Tomlyn" Version="0.17.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="program.basic">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Project.toml">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
 
 </Project>
