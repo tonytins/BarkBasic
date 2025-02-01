@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.200
+
+- Rewritten and simplified architecture.
+
 ## 0.1.120
 
 Moved the hard-coded example to a ``.basic`` file that is read from a Toml-based project file.

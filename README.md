@@ -4,7 +4,9 @@ Bark Basic (working title) is a BASIC programming language paser. Right now, it 
 
 ## Background
 
-I've always wanted to write a parser for a programming language, but I had no idea where to start because there are so many ways to write one. Despite writing varies ones in the past, I've never really felt satisfied. In the past, I had the free version of ChatGPT write me drafts for a few starting points, but those were as buggy as you would expect. So, I decided to give it another whirl using Bing Copilot instead. After a few attempts, I asked it to use my algorithm from [CST.NET](https://github.com/tonytins/cstdotnet) as a reference, and it worked!
+I've always wanted to write a parser for a programming language, but I had no idea where to start because there are so many ways to write one. Despite writing varies ones in the past, I've never really felt satisfied, so I asked AI. 
+
+Originally, I used ChatGPT and I create a BASIC parser so I could use a template. While it worked, it was a little over-engineered for what I needed. Fast-forward to Deepseek making a splash, I tweaked the system prompt for the Coder version to be as good as NASA and requested the same thing but have it be expandable. Worked on the first try from [.NET Fiddle](https://dotnetfiddle.net/vPPVHD).
 
 ## License
 
