@@ -10,7 +10,7 @@ class Program
         // Add more commands as needed
 
         string basicCode = @"
-            PRINT ""Hello, World!""
+            PRINT Hello, World!
             LET A = 10
             PRINT A
         ";
@@ -23,6 +23,7 @@ class Program
         Console.WriteLine(string.Join(" ", args));
     }
 
+    // FIXME: Fails to assign to variable and return syntax error
     static void LetCommand(List<string> args)
     {
         if (args.Count != 2 || !int.TryParse(args[1], out int value))
